@@ -14,4 +14,4 @@ This guide started as a place to consolidate random scratch notes from informati
 * [Creating and accessing objects](objects.html)
 * [Calling other native functions](calling-native.html)
 * [Declaring/Accessing globals](globals.html)
-
+* [Creating a JavaScript Class](jsclasses.html)
