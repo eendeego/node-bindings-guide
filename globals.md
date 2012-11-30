@@ -4,9 +4,11 @@ title: Accessing the global scope
 ---
 # Accessing the global scope
 
-    Handle<String> variable_name = String::New("global_variable_name");
-    Handle<Value> global_variable =
-        Context::GetCurrent()->Global()->Get(variable_name);
+```cpp
+Handle<String> variable_name = String::New("global_variable_name");
+Handle<Value> global_variable =
+    Context::GetCurrent()->Global()->Get(variable_name);
+```
 
 Reference
 

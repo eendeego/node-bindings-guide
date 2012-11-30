@@ -15,22 +15,24 @@ title: Native method template
 
 Sample code:
 
-    #ifndef MY_NATIVE_LIB_H_
-    #define MY_NATIVE_LIB_H_
+```cpp
+#ifndef MY_NATIVE_LIB_H_
+#define MY_NATIVE_LIB_H_
 
-    #include <node.h>
-    #include <v8.h>
+#include <node.h>
+#include <v8.h>
 
-    using namespace v8;
+using namespace v8;
 
-    namespace my_namespace {
-      static Handle<Value> MethodAlpha(const Arguments& args);
-      static Handle<Value> MethodBeta(const Arguments& args);
-      static Handle<Value> MethodGamma(const Arguments& args);
-      //...
-    }
+namespace my_namespace {
+  static Handle<Value> MethodAlpha(const Arguments& args);
+  static Handle<Value> MethodBeta(const Arguments& args);
+  static Handle<Value> MethodGamma(const Arguments& args);
+  //...
+}
 
-    #endif
+#endif
+```
 
 ## Prefix for each c++ code file (.cc/.cpp):
 
@@ -43,24 +45,25 @@ Sample code:
 
 Sample code:
 
+```cpp
+#include <node.h>
+#include <node_buffer.h>
+#include <v8.h>
 
-    #include <node.h>
-    #include <node_buffer.h>
-    #include <v8.h>
+#include <my_include>
+#include "my_other_include.h"
 
-    #include <my_include>
-    #include "my_other_include.h"
+using namespace node;
+using namespace v8;
 
-    using namespace node;
-    using namespace v8;
-
-    extern "C" void
-    init(Handle<Object> target) {
-      NODE_SET_METHOD(target, "methodAlpha" , my_namespace::MethodAlpha);
-      NODE_SET_METHOD(target, "methodBeta"  , my_namespace::MethodBeta);
-      NODE_SET_METHOD(target, "methodGamma" , my_namespace::MethodGama);
-      // ...
-    }
+extern "C" void
+init(Handle<Object> target) {
+  NODE_SET_METHOD(target, "methodAlpha" , my_namespace::MethodAlpha);
+  NODE_SET_METHOD(target, "methodBeta"  , my_namespace::MethodBeta);
+  NODE_SET_METHOD(target, "methodGamma" , my_namespace::MethodGama);
+  // ...
+}
+```
 
 ## Method/Function template:
 
@@ -69,13 +72,15 @@ Sample code:
 
 Sample code:
 
-    Handle<Value> my_namespace::MethodAlpha(const Arguments& args) {
-      HandleScope scope;
+```cpp
+Handle<Value> my_namespace::MethodAlpha(const Arguments& args) {
+  HandleScope scope;
 
-      // My stuff goes here
+  // My stuff goes here
 
-      return scope.Close(something);
-    }
+  return scope.Close(something);
+}
+```
 
 See [arguments](arguments.html) and [returning values](returning.html).
 
