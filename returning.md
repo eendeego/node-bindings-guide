@@ -10,41 +10,51 @@ Note that Undefined, Null and some scalar values may be returned without going t
 
 ## Undefined / Null
 
-    return scope.Close(Undefined());
-    // or
-    return scope.Close(Null());
+```cpp
+return scope.Close(Undefined());
+// or
+return scope.Close(Null());
+```
 
 ## Scalar values
 
-    return scope.Close(Boolean::New(v)); // or
-    return scope.Close(True()); // or
-    return scope.Close(False());
+```cpp
+return scope.Close(Boolean::New(v)); // or
+return scope.Close(True()); // or
+return scope.Close(False());
 
-    return scope.Close(Number::New(v));
-    return scope.Close(Integer::New(v));
-    return scope.Close(Uint32::New(v));
-    return scope.Close(Int32::New(v));
+return scope.Close(Number::New(v));
+return scope.Close(Integer::New(v));
+return scope.Close(Uint32::New(v));
+return scope.Close(Int32::New(v));
+```
 
 ## Native enums
 
-    return scope.Close(Integer::New(v));
+```cpp
+return scope.Close(Integer::New(v));
+```
 
 ## Objects
 
-    Local<Object> obj = Object::New();
-    // Set stuff (see below)
-    return scope.Close(obj);
+```cpp
+Local<Object> obj = Object::New();
+// Set stuff (see below)
+return scope.Close(obj);
+```
 
 ## Buffers (node.js only)
 
-    Buffer *slowBuffer = Buffer::New(length);
-    memcpy(Buffer::Data(slowBuffer), data, length);
+```cpp
+Buffer *slowBuffer = Buffer::New(length);
+memcpy(Buffer::Data(slowBuffer), data, length);
 
-    Local<Object> globalObj = Context::GetCurrent()->Global();
-    Local<Function> bufferConstructor = Local<Function>::Cast(globalObj->Get(String::New("Buffer")));
-    Handle<Value> constructorArgs[3] = { slowBuffer->handle_, v8::Integer::New(length), v8::Integer::New(0) };
-    Local<Object> actualBuffer = bufferConstructor->NewInstance(3, constructorArgs);
-    return scope.Close(actualBuffer);
+Local<Object> globalObj = Context::GetCurrent()->Global();
+Local<Function> bufferConstructor = Local<Function>::Cast(globalObj->Get(String::New("Buffer")));
+Handle<Value> constructorArgs[3] = { slowBuffer->handle_, v8::Integer::New(length), v8::Integer::New(0) };
+Local<Object> actualBuffer = bufferConstructor->NewInstance(3, constructorArgs);
+return scope.Close(actualBuffer);
+```
 
 Reference:
 
@@ -56,30 +66,36 @@ V8 source code includes a runtime called D8 that also declares native arrays, ho
 
 The code below actually acts as if it was javascript calling the public native array creation functions.
 
-    Handle<Value>    fun_val  = Context::GetCurrent()->Global()->Get(name);
-    Handle<Function> fun      = Handle<Function>::Cast(fun_val);
+```cpp
+Handle<Value>    fun_val  = Context::GetCurrent()->Global()->Get(name);
+Handle<Function> fun      = Handle<Function>::Cast(fun_val);
 
-    const unsigned argc = 1;
-    Local<Value> argv[argc] = { Local<Value>::New(Uint32::New(length)) };
+const unsigned argc = 1;
+Local<Value> argv[argc] = { Local<Value>::New(Uint32::New(length)) };
 
-    Local<Object> result = fun->NewInstance(argc, argv);
-    return scope.Close(result);
+Local<Object> result = fun->NewInstance(argc, argv);
+return scope.Close(result);
+```
 
 Where name is one of:
 
-    String::New("Int8Array")
-    String::New("Uint8Array")
-    String::New("Uint8ClampedArray")
-    String::New("Int16Array")
-    String::New("Uint16Array")
-    String::New("Int32Array")
-    String::New("Uint32Array")
-    String::New("Float32Array")
-    String::New("Float64Array")
+```cpp
+String::New("Int8Array")
+String::New("Uint8Array")
+String::New("Uint8ClampedArray")
+String::New("Int16Array")
+String::New("Uint16Array")
+String::New("Int32Array")
+String::New("Uint32Array")
+String::New("Float32Array")
+String::New("Float64Array")
+```
 
 ## Wrapped values
 
+```cpp
     External::Wrap(v)
+```
 
 Reference:
 
