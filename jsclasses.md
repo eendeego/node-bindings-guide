@@ -30,18 +30,14 @@ Declare a C++ class inside your own namespace) - preferably in a `.h` file:
         // Destructor:
         virtual  ~Context   ();
         
-        // Public Instance Methods
+      private:
+        
+        // Instance Methods
         Handle<Value>         DoStuff          ();
         static Handle<Value>  DoStuff          (const Arguments &args);
         Handle<Value>         DoMoreStuff      ();
         static Handle<Value>  DoMoreStuff      (const Arguments &args);
 
-        
-      private:
-      
-        // Initialization
-        Handle<Value>         Init             ();
-      }
     }
 
 Then, back in the main `.cc` file, declare the constructor, destructor and initialization methods.
