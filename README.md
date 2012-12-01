@@ -4,13 +4,17 @@ You are looking at the _Node/V8 native bindings guide_ source. For the actual gu
 
 The guide uses [Dinky theme](https://github.com/broccolini/dinky) and is build by the [github pages](http://pages.github.com/)'s [jekyll](https://github.com/mojombo/jekyll) site generator.
 
-To build the site locally use bundler to install jekyll:
+To build the site locally:
+
+Use bundler to install jekyll:
 
     bundle
 
 And then jekyll to generate the site:
 
-    jekyll --safe --auto
+    jekyll --safe --auto --server --base-url /node-bindings-guide/
+
+To access it point your browser to `http://localhost:4000/node-bindings-guide/`.
 
 The `_config.yml` file is already configured with the same settings as gh-pages.
 
