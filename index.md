@@ -8,10 +8,10 @@ This guide started as a place to consolidate random scratch notes from informati
 
 ## Sections
 
-* [Common code for native methods](native-common-code.html)
-* [Receiving arguments](arguments.html)
-* [Returning values](returning.html)
-* [Creating and accessing objects](objects.html)
-* [Calling other native functions](calling-native.html)
-* [Declaring/Accessing globals](globals.html)
-* [Creating a JavaScript Class](jsclasses.html)
+* [Common code for native methods](docs/native-common-code.html)
+* [Receiving arguments](docs/arguments.html)
+* [Returning values](docs/returning.html)
+* [Creating and accessing objects](docs/objects.html)
+* [Calling other native functions](docs/calling-native.html)
+* [Declaring/Accessing globals](docs/globals.html)
+* [Creating a JavaScript Class](docs/jsclasses.html)
