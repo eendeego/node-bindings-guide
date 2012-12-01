@@ -1,8 +1,11 @@
-dinky
-=====
+# node-bindings-guide
 
-Dinky is a red hot theme for GitHub Pages. [Fork it](https://github.com/broccolini/dinky/fork_select) and use it on your own site or generate one automatically using [GitHub Pages](http://pages.github.com).
+You are looking at the source documents for de "Node/V8 native bindings guide." for the actual guide take a loot at [http://luismreis.github.com/node-bindings-guide/](http://luismreis.github.com/node-bindings-guide/).
 
-[![](http://broccolini.net/images/dinky-example.png)](http://urzajs.com/)
+The guide uses [Dinky theme](https://github.com/broccolini/dinky).
 
-Dinky is available under the Creative Commons Attribution 3.0 License. Basically, use it, modify it, and remix it. Attribution is not necessary but it is appreciated :)
+For contributions, please check [contributing](https://github.com/luismreis/node-bindings-guide/blob/gh-pages/CONTRIBUTING.md).
+
+------
+
+Have fun building your own native libraries!
