@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: index
 title: Node/V8 native binding guide
 ---
 # Node/V8 native binding guide
