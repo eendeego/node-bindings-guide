@@ -8,9 +8,10 @@ title: Creating a JavaScript Class
 
 In the main `.cc` of your module declare the module initializer:
 
-    extern "C" void init(Handle<Object> target) {
+    void init(Handle<Object> target) {
       my_namespace::Initialize(target);
     }
+    NODE_MODULE(my_module, init)
 
 Declare a C++ class inside your own namespace) - preferably in a `.h` file:
 
