@@ -8,6 +8,7 @@ This guide started as a place to consolidate random scratch notes from informati
 
 ## Sections
 
+* [Getting started](docs/getting-started.html)
 * [Common code for native methods](docs/native-common-code.html)
 * [Receiving arguments](docs/arguments.html)
 * [Returning values](docs/returning.html)
