@@ -54,13 +54,13 @@ Sample code:
     using namespace node;
     using namespace v8;
 
-    extern "C" void
-    init(Handle<Object> target) {
+    void init(Handle<Object> target) {
       NODE_SET_METHOD(target, "methodAlpha" , my_namespace::MethodAlpha);
       NODE_SET_METHOD(target, "methodBeta"  , my_namespace::MethodBeta);
       NODE_SET_METHOD(target, "methodGamma" , my_namespace::MethodGama);
       // ...
     }
+    NODE_MODULE(my_module, init)
 
 ## Method/Function template:
 
